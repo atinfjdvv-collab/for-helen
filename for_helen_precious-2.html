@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Helen ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow:hidden;font-family:Georgia,serif;color:#fff;
+background:radial-gradient(circle at 50% 35%,#7b1838 0,#3b0b20 42%,#16030c 100%);
+display:grid;place-items:center}
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none}
+.hearts span{position:absolute;bottom:-60px;font-size:25px;opacity:.55;animation:float linear infinite}
+.hearts span:nth-child(1){left:8%;animation-duration:9s}.hearts span:nth-child(2){left:22%;animation-duration:12s;animation-delay:2s}.hearts span:nth-child(3){left:38%;animation-duration:10s;animation-delay:4s}.hearts span:nth-child(4){left:56%;animation-duration:13s;animation-delay:1s}.hearts span:nth-child(5){left:72%;animation-duration:9s;animation-delay:3s}.hearts span:nth-child(6){left:88%;animation-duration:11s;animation-delay:5s}
+.card{position:relative;width:min(92vw,430px);min-height:590px;padding:42px 28px;border:1px solid #ffffff30;border-radius:30px;
+background:#18050dcc;backdrop-filter:blur(8px);box-shadow:0 25px 80px #0008;display:grid;place-items:center;text-align:center}
+.page{display:none;animation:fade .7s ease}.page.on{display:block}
+h1{font-size:34px;margin:0 0 18px}.heart{font-size:58px;animation:pulse 1.5s infinite;margin-bottom:10px}
+h2{font-size:26px;margin:0 0 20px}p{font-size:17px;line-height:1.85;color:#f7dfe7}
+.poem{font-size:19px;line-height:2!important;font-style:italic;color:#fff}
+button{border:1px solid #ffffff45;border-radius:30px;padding:14px 25px;background:#ffffff18;color:#fff;font-size:15px;margin-top:20px;cursor:pointer}
+.small{font-size:14px;color:#d9aeba;margin-top:26px}
+.dots{position:absolute;bottom:18px;color:#d79aaa;font-size:11px}
+@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{transform:scale(1.13)}}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.55}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="hearts"><span>❤</span><span>♥</span><span>❤</span><span>♥</span><span>❤</span><span>♥</span></div>
+<main class="card">
+<section class="page on"><div>
+<div class="heart">❤</div>
+<h1>Hey Helen…</h1>
+<p>There are some people who are simply special.<br>
+And then there are people who become <i>precious</i> without even trying.</p>
+<button onclick="next()">A little something for you</button>
+</div></section>
+
+<section class="page"><div>
+<h2>ஒரு சிறிய கவிதை… ❤️</h2>
+<p class="poem">
+சிலர் வருவது<br>
+நம் வாழ்க்கையில் ஒரு நிகழ்வு…<br><br>
+சிலர் இருப்பது<br>
+நம் நினைவுகளில் ஒரு பழக்கம்…<br><br>
+ஆனால் சிலர் மட்டும்…<br>
+நம் மனதிற்கு<br>
+மிகவும் பிடித்த அமைதியாகிவிடுகிறார்கள்.
+</p>
+<button onclick="next()">இன்னும் கொஞ்சம்…</button>
+</div></section>
+
+<section class="page"><div>
+<div class="heart">♡</div>
+<h2>For someone precious</h2>
+<p>உன்னைப் பற்றி பெரிய வார்த்தைகள் சொல்லத் தெரியாது…</p>
+<p>ஆனால், உன்னுடன் பேசும் சில நிமிடங்கள் கூட<br>
+சாதாரண நாளை அழகான நாளாக மாற்றிவிடுகிறது.</p>
+<button onclick="next()">One more</button>
+</div></section>
+
+<section class="page"><div>
+<h2>Helen… 🌙</h2>
+<p class="poem">
+“நிலவை ரசிக்க<br>
+வானத்தைப் பார்க்க வேண்டியதில்லை…<br><br>
+சில நேரங்களில்,<br>
+ஒரு மனிதரின் இருப்பே<br>
+ஒரு அழகான இரவாகிவிடும்.”
+</p>
+<button onclick="next()">Last one</button>
+</div></section>
+
+<section class="page"><div>
+<div class="heart">❤</div>
+<h1>That's all, Helen.</h1>
+<p>இதற்கு எந்த பெரிய விளக்கமும் தேவையில்லை.</p>
+<p class="poem">நீ எனக்கு எவ்வளவு precious-ஆ இருக்கிறாய் என்பதை…<br>
+ஒருநாள் நீயே புரிந்துகொள்வாய். ❤️</p>
+<p class="small">Until then… just smile. 🙂</p>
+</div></section>
+
+<div class="dots" id="dots">● ○ ○ ○ ○</div>
+</main>
+<script>
+let i=0,p=document.querySelectorAll('.page'),d=document.getElementById('dots');
+function next(){p[i].classList.remove('on');i=Math.min(i+1,p.length-1);p[i].classList.add('on');d.textContent=[0,1,2,3,4].map(x=>x===i?'●':'○').join(' ')}
+</script>
+</body>
+</html>
